@@ -1,0 +1,26 @@
+let result='';
+let count=0;
+let succeeded=0;
+function ask12345(s) {
+  interval = setInterval(function() {
+    let req = new XMLHttpRequest();
+req.open('get', 'http://localhost:12345/');
+req.send();
+count++;
+req.onload = function() {
+    if (req.response.includes('failed')) {
+    result='failed';
+    } else if (req.response.includes('Magnificent!')) {
+    result='succeeded';
+    succeeded++;
+    } else {
+    result='unidentified response';
+    }
+    console.log(result, `total requests sent: ${count}, ${succeeded} succeeded (${Math.floor(100*succeeded/count)}%)`)
+};
+  }, s*1000);
+}
+
+//ask12345(5)
+
+
