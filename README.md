@@ -1,5 +1,9 @@
-After starting the python server, uncomment the function call 'ask12345' and pass the interval in seconds as the parameter.
-The 'ask12345' function will send a GET request every s seconds to http://localhost:12345/ and print a string comprising of:
--character of the response (failed/succeeded)
--total requests since starting the server
--number and percentage of success responses.
+Install node.js and in the challenge directory, run npm install.
+After starting the python server, in a new console type 'node ask12345'.
+You will be prompted to enter the request interval in seconds.
+The ask12345 function prints request results in the following format:
+-response character (failed or succeeded)
+-total requests sent
+-percentage of succeeded requests
+
+CTRL+C to quit.
